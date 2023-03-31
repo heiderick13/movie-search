@@ -1,8 +1,7 @@
 import "./SearchBar.css";
-import { useState } from "react";
 
 function SearchBar() {
-  return <input type="text" name="" id="" />;
+  return <div>SearchBar</div>;
 }
 
 export default SearchBar;
