@@ -2,6 +2,7 @@ import "./App.css";
 import { useState } from "react";
 import Recipe from "./components/Recipe/RecipeCard";
 import SearchBar from "./components/SearchBar/SearchBar";
+import Loading from "./components/Loading/Loading";
 
 const apiUrl = "www.themealdb.com/api/json/v1/1/search.php?s=";
 
@@ -34,6 +35,7 @@ function App() {
         isLoading={isLoading}
         value={query}
       />
+      {isLoading && <Loading />}
       <div className="recipes">
         {recipes
           ? recipes.map((recipe) => {
