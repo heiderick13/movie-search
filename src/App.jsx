@@ -1,30 +1,23 @@
 import "./App.css";
 import { useState } from "react";
-import Recipe from "./components/Recipe/RecipeCard";
+import Movie from "./components/MovieCard/MovieCard";
 import SearchBar from "./components/SearchBar/SearchBar";
 import Loading from "./components/Loading/Loading";
 
-const apiUrl = "www.themealdb.com/api/json/v1/1/search.php?s=";
+const apiUrl = import.meta.env.VITE_API;
+const apiKey = import.meta.env.VITE_API_KEY;
 
 function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [query, setQuery] = useState("");
-  const [recipes, setRecipes] = useState([]);
+  const [movies, setMovies] = useState([]);
 
   // fetch function
-  async function searchRecipes() {
-    setIsLoading(true);
-    const url = apiUrl + query;
-    const res = await fetch(url);
-    const data = await res.json();
-    setRecipes(data.meals);
-    console.log(data);
-    setIsLoading(false);
-  }
+  async function searchMovies() {}
 
   function handleSubmit(e) {
     e.preventDefault();
-    searchRecipes();
+    searchMovies();
   }
 
   return (
@@ -36,12 +29,12 @@ function App() {
         value={query}
       />
       {isLoading && <Loading />}
-      <div className="recipes">
-        {recipes
-          ? recipes.map((recipe) => {
-              <Recipe key={recipe.idMeal} name={recipe} />;
+      <div className="movies">
+        {movies
+          ? movies.map((movie) => {
+              <Movie key={movie.idMeal} name={movie} />;
             })
-          : "No recipes found"}
+          : "No movies found"}
       </div>
       <h1>Receitas</h1>
     </div>
