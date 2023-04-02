@@ -1,7 +1,7 @@
-import "./Recipe.css";
+import "./MovieCard.css";
 
-function RecipeCard({ name, ingredients, recipe }) {
+function MovieCard({ name, ingredients, movie }) {
   return <div></div>;
 }
 
-export default RecipeCard;
+export default MovieCard;
