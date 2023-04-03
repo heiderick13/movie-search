@@ -45,9 +45,8 @@ function App() {
       />
       {isLoading && <Loading />}
       <div className="movies-container">
-        {movies.length > 0
-          ? movies.map((movie) => <MovieCard key={movie.id} movie={movie} />)
-          : "No movies found"}
+        {movies.length > 0 &&
+          movies.map((movie) => <MovieCard key={movie.id} movie={movie} />)}
       </div>
     </div>
   );
