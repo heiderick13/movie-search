@@ -23,20 +23,24 @@ function App() {
     console.log(data.results);
   }
 
-  useEffect(() => {
-    searchMovies("star");
-  }, []);
+  // useEffect(() => {
+  //   searchMovies("star");
+  // }, []);
 
   function handleSubmit(e) {
     e.preventDefault();
-    searchMovies();
+    searchMovies(query);
+  }
+
+  function handleUpdateQuery(e) {
+    setQuery(e.target.value);
   }
 
   return (
     <div className="App">
       <SearchBar
         handleSubmit={handleSubmit}
-        onChange={(e) => setQuery(e.target.value)}
+        handleUpdateQuery={handleUpdateQuery}
         value={query}
       />
       {isLoading && <Loading />}
