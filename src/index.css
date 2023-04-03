@@ -9,6 +9,15 @@
   line-height: 1.5;
   font-weight: 400;
   font-size: 62.5%;
+  color: var(--white);
+
+  --primary-bg: hsl(222, 78%, 9%);
+  --secundary-bg: hsl(220, 40%, 10%);
+  --terciary-bg: hsl(49, 82%, 44%);
+
+  --white: hsl(0, 0%, 100%);
+
+  /* hsl(208, 58%, 50%) */
 }
 
 #root {
@@ -17,6 +26,8 @@
 
 .movies-container {
   margin: auto;
+  padding: 5rem 2rem;
+  background-color: var(--secundary-bg);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;

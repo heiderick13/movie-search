@@ -1,5 +1,5 @@
 .header {
-  background-color: hsl(228, 55%, 29%);
+  background-color: var(--primary-bg);
   padding: 1rem;
 }
 
@@ -17,6 +17,6 @@ form input {
 }
 
 form button {
-  background-color: hsl(49, 82%, 44%);
-  color: white;
+  background-color: var(--terciary-bg);
+  color: var(--white);
 }
