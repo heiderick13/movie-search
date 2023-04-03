@@ -1,0 +1,22 @@
+.movie-card {
+  margin-bottom: 2rem;
+  width: 35rem;
+  font-size: 1.4rem;
+  border-radius: 0.8rem;
+  border: 2px solid #ccc;
+  overflow: hidden;
+}
+
+.movie-card * {
+  padding-bottom: 1rem;
+}
+
+.movie-img {
+  width: 100%;
+  height: 75%;
+}
+
+.movie-title {
+  font-size: 2rem;
+  padding-inline: 1rem;
+}
