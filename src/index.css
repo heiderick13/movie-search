@@ -16,18 +16,21 @@
   --terciary-bg: hsl(49, 82%, 44%);
 
   --white: hsl(0, 0%, 100%);
-
-  /* hsl(208, 58%, 50%) */
+  --gray: hsl(0, 0%, 49%);
+  --blue: hsl(208, 58%, 50%);
 }
 
 #root {
   text-align: center;
 }
 
+body {
+  background-color: var(--secundary-bg);
+}
+
 .movies-container {
   margin: auto;
   padding: 5rem 2rem;
-  background-color: var(--secundary-bg);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;

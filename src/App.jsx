@@ -14,13 +14,13 @@ function App() {
 
   // fetch function
   async function searchMovies(query) {
+    setIsLoading(true);
     const queryURL = searchUrl + apiKey + "&query=";
     const res = await fetch(queryURL + query);
     const data = await res.json();
 
     setMovies(data.results);
-
-    console.log(data.results);
+    setIsLoading(false);
   }
 
   // useEffect(() => {

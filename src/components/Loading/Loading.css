@@ -1,17 +1,12 @@
 #loading {
-  width: 2rem;
-  height: 2rem;
-  border: 5px solid gray;
-  border-top: 6px solid black;
+  width: 4rem;
+  height: 4rem;
+  border: 7px solid var(--gray);
+  border-top: 8px solid var(--blue);
   border-radius: 100%;
   margin: 1rem auto 0.5rem;
-  /* display: none; */
   animation: spin 1s infinite linear;
 }
-
-/* #loading.show {
-  display: block;
-} */
 
 @keyframes spin {
   from {
