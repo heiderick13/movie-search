@@ -1,10 +1,10 @@
-import "./App.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Movie from "./components/MovieCard/MovieCard";
 import SearchBar from "./components/SearchBar/SearchBar";
 import Loading from "./components/Loading/Loading";
+import MovieCard from "./components/MovieCard/MovieCard";
 
-const apiUrl = import.meta.env.VITE_API;
+const searchUrl = import.meta.env.VITE_SEARCH;
 const apiKey = import.meta.env.VITE_API_KEY;
 
 function App() {
@@ -13,7 +13,19 @@ function App() {
   const [movies, setMovies] = useState([]);
 
   // fetch function
-  async function searchMovies() {}
+  async function searchMovies(query) {
+    const queryURL = searchUrl + apiKey + "&query=";
+    const res = await fetch(queryURL + query);
+    const data = await res.json();
+
+    setMovies(data.results);
+
+    console.log(data.results);
+  }
+
+  useEffect(() => {
+    searchMovies("star");
+  }, []);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -25,18 +37,14 @@ function App() {
       <SearchBar
         handleSubmit={handleSubmit}
         onChange={(e) => setQuery(e.target.value)}
-        isLoading={isLoading}
         value={query}
       />
       {isLoading && <Loading />}
-      <div className="movies">
-        {movies
-          ? movies.map((movie) => {
-              <Movie key={movie.idMeal} name={movie} />;
-            })
+      <div className="movies-container">
+        {movies.length > 0
+          ? movies.map((movie) => <MovieCard key={movie.id} movie={movie} />)
           : "No movies found"}
       </div>
-      <h1>Receitas</h1>
     </div>
   );
 }

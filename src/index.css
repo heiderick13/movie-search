@@ -10,3 +10,14 @@
   font-weight: 400;
   font-size: 62.5%;
 }
+
+#root {
+  text-align: center;
+}
+
+.movies-container {
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
