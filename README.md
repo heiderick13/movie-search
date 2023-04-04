@@ -9,7 +9,7 @@
 
 ## Built With
 
-- Reactjs
+- React
 - CSS custom properties
 - Flexbox
 
