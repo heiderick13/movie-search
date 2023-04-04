@@ -42,8 +42,12 @@ function App() {
         handleSubmit={handleSubmit}
         handleUpdateQuery={handleUpdateQuery}
         value={query}
+        placeholder={"Use a key-word to search for movies"}
       />
       {isLoading && <Loading />}
+      {movies.length === 0 && (
+        <h1 className="initial-title">Find the perfect movie for your night</h1>
+      )}
       <div className="movies-container">
         {movies.length > 0 &&
           movies.map((movie) => <MovieCard key={movie.id} movie={movie} />)}
