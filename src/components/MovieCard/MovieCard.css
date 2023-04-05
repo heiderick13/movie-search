@@ -7,8 +7,22 @@
   overflow: hidden;
 }
 
+.flex {
+  display: flex;
+  justify-content: center;
+}
+
+.icon {
+  font-size: 2.5rem;
+  margin-right: 1rem;
+}
+
+.stats {
+  font-size: 2rem;
+}
+
 .movie-card * {
-  padding-bottom: 1rem;
+  padding-bottom: 0.5rem;
 }
 
 .movie-img {
@@ -19,4 +33,5 @@
 .movie-title {
   font-size: 2rem;
   padding-inline: 1rem;
+  margin-bottom: 1.5rem;
 }

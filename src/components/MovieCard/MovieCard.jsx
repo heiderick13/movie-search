@@ -1,5 +1,7 @@
 import "./MovieCard.css";
 
+import { BsCalendar2Date, BsStarHalf } from "react-icons/bs";
+
 const imgURL = import.meta.env.VITE_IMG;
 
 function MovieCard({ movie }) {
@@ -11,8 +13,18 @@ function MovieCard({ movie }) {
         alt={movie.title}
       />
       <h3 className="movie-title">{movie.title}</h3>
-      <p className="movie-popularity">{movie.popularity.toFixed(2)}</p>
-      <p className="movie-date">{movie.release_date}</p>
+      <p className="movie-popularity flex">
+        <span className="icon">
+          <BsStarHalf />
+        </span>
+        <span className="stats">{movie.vote_average.toFixed(1)}</span>
+      </p>
+      <p className="movie-date flex">
+        <span className="icon">
+          <BsCalendar2Date />
+        </span>
+        <span className="stats">{movie.release_date}</span>
+      </p>
     </div>
   );
 }
